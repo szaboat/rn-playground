@@ -1,9 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { StyleSheet, Image, View, Slider } from 'react-native';
 import CircularProgress from './CircularProgress';
 
 export default function App() {
   [value, setValue] = useState(0);
+
+  useEffect(() => { 
+    setInterval(() => {
+      if (value < 100) {
+        setValue(value + 0.1);
+      }
+    }, 50);
+  }, []);
 
   return (
     <View style={styles.container}>
