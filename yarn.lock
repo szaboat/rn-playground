@@ -4564,6 +4564,11 @@ react-native-gesture-handler@^1.4.1:
     invariant "^2.2.4"
     prop-types "^15.7.2"
 
+react-native-mentions@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/react-native-mentions/-/react-native-mentions-1.1.4.tgz#dc50ef2f096a2ebf8819a44794f6b3046bc69308"
+  integrity sha1-3FDvLwlqLr+IGaRHlPazBGvGkwg=
+
 react-native-reanimated@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.2.0.tgz#9219227a52a5dfa4d34c324596d6726ccd874293"
