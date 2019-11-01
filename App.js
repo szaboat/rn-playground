@@ -4,6 +4,7 @@ import CircularProgressScreen from './screens/circularProgress';
 import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import ChatInputScreen from "./screens/chatInputScreen";
+import RichInputScreen from "./screens/richInputScreen";
 
 const MyDrawerNavigator = createDrawerNavigator({
   CircularProgressScreen: {
@@ -12,8 +13,11 @@ const MyDrawerNavigator = createDrawerNavigator({
   ChatInputScreen: {
     screen: ChatInputScreen,
   },
+  RichInputScreen: {
+    screen: RichInputScreen,
+  },
 },
-  {initialRouteName: "ChatInputScreen"});
+  {initialRouteName: "RichInputScreen"});
 
 const App = createAppContainer(MyDrawerNavigator);
 
