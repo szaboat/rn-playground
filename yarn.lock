@@ -4628,7 +4628,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -4750,6 +4750,11 @@ react-native-gesture-handler@^1.4.1:
     hoist-non-react-statics "^2.3.1"
     invariant "^2.2.4"
     prop-types "^15.7.2"
+
+react-native-masked-input-text@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/react-native-masked-input-text/-/react-native-masked-input-text-1.0.11.tgz#287585b4f60d51fbb7a7a2f2074ae07a9042616b"
+  integrity sha512-6y1Q3SlroBZ8CgeAi5liB6cJp57yV0XB9tsNsOB4O6GZ7LT+Q7KtHbTri0ZT/vKKnOCXAPoSUB+wTm5A4gDVAQ==
 
 react-native-masked-text@^1.13.0:
   version "1.13.0"
@@ -4898,6 +4903,13 @@ react-proxy@^1.1.7:
   dependencies:
     lodash "^4.6.1"
     react-deep-force-update "^1.0.0"
+
+react-text-mask@^5.4.3:
+  version "5.4.3"
+  resolved "https://registry.yarnpkg.com/react-text-mask/-/react-text-mask-5.4.3.tgz#991efb4299e30c2e6c2c46d13f617169463e0d2d"
+  integrity sha1-mR77QpnjDC5sLEbRP2FxaUY+DS0=
+  dependencies:
+    prop-types "^15.5.6"
 
 react-timer-mixin@^0.13.4:
   version "0.13.4"

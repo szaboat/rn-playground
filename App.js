@@ -6,6 +6,7 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 import ChatInputScreen from "./screens/chatInputScreen";
 import RichInputScreen from "./screens/richInputScreen";
 import VerifyCodeScreen from "./screens/verifyCodeScreen";
+import MaskedInputScreen from "./screens/maskedInputScreen";
 
 const MyDrawerNavigator = createDrawerNavigator({
   CircularProgressScreen: {
@@ -20,8 +21,11 @@ const MyDrawerNavigator = createDrawerNavigator({
   VerifyCodeScreen: {
     screen: VerifyCodeScreen,
   },
+  MaskedInputScreen: {
+    screen: MaskedInputScreen,
+  },
 },
-  {initialRouteName: "VerifyCodeScreen"});
+  {initialRouteName: "MaskedInputScreen"});
 
 const App = createAppContainer(MyDrawerNavigator);
 
