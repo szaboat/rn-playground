@@ -1,23 +1,49 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "es6": true
+  env: {
+    es6: true,
+    node: true,
+  },
+  extends: "eslint:recommended",
+  globals: {
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly",
+    __DEV__: "readonly",
+    alert: "readonly",
+    document: "readonly",
+    fetch: "readonly",
+    google: "readonly",
+    localStorage: "readonly",
+    window: "readonly",
+    confirm: "readonly",
+    FormData: "readonly",
+    XMLHttpRequest: "readonly",
+  },
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
     },
-    "extends": "eslint:recommended",
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
+    ecmaVersion: 2018,
+    sourceType: "module",
+  },
+  plugins: ["react", "react-hooks", "react-native", "import"],
+  rules: {
+    "react/jsx-no-literals": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/jsx-no-undef": "error",
+    "react/jsx-no-duplicate-props": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "react-native/no-color-literals": 2,
+    "react-native/no-inline-styles": 2,
+    "react-native/no-unused-styles": 2,
+    "no-console": [2, { allow: ["warn", "error"] }],
+    "import/extensions": [2, "never", { json: "always" }],
+    "import/named": 2,
+    "import/no-unresolved": 2,
+    "no-unused-vars": [
+      "error",
+      { varsIgnorePattern: "^_", argsIgnorePattern: "^_" },
     ],
-    "rules": {
-    }
+  },
 };
