@@ -8,6 +8,8 @@ import VerifyCodeScreen from "./screens/verifyCodeScreen";
 import MaskedInputScreen from "./screens/maskedInputScreen";
 import KeyboardAvoidingScreen from "./screens/keyboardAvoidingScreen";
 import RadioButtonScreen from "./screens/radioButtonScreen";
+import AutocompletePlacesScreen from "./screens/placesScreen";
+import LayoutTestScreen from "./screens/layoutTestScreen";
 
 const MyDrawerNavigator = createDrawerNavigator(
   {
@@ -32,8 +34,14 @@ const MyDrawerNavigator = createDrawerNavigator(
     RadioButtonScreen: {
       screen: RadioButtonScreen,
     },
+    AutocompletePlacesScreen: {
+      screen: AutocompletePlacesScreen,
+    },
+    LayoutTestScreen: {
+      screen: LayoutTestScreen,
+    },
   },
-  { initialRouteName: "RadioButtonScreen" },
+  { initialRouteName: "LayoutTestScreen" },
 );
 
 const App = createAppContainer(MyDrawerNavigator);

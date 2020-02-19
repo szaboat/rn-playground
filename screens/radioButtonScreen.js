@@ -12,11 +12,6 @@ const RadioButtonScreen = () => {
     { label: "Super / PM / Foreman", value: 4 },
   ];
 
-  // const [value, setValue] = useState();
-  // const onPress = (value) => {
-  //   setValue(value);
-  // };
-
   return (
     <View style={styles.container}>
       <RadioButtons options={radio_props}></RadioButtons>
