@@ -31,7 +31,8 @@
     "react-native-web": "~0.13.12",
     "react-navigation": "^4.0.10",
     "react-navigation-drawer": "^2.3.2",
-    "react-text-mask": "^5.4.3"
+    "react-text-mask": "^5.4.3",
+    "uuid-js": "^0.7.5"
   },
   "devDependencies": {
     "babel-preset-expo": "8.3.0",

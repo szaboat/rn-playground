@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, FlatList, StyleSheet, SafeAreaView } from "react-native";
 import Constants from "expo-constants";
 import faker from "faker";
+import UUID from "uuid-js";
 
 // https://stackoverflow.com/a/57059772/475565
+const TEST_ID = "test-id";
 
 function* range(start, end) {
   for (let i = start; i <= end; i++) {
@@ -16,13 +18,17 @@ const getRandomData = (num) => {
   return items.map(() => ({
     title: faker.lorem.sentence(Math.ceil(Math.random() * 25)),
     data: faker.lorem.sentence(),
+    id: UUID.create().toString(),
   }));
 };
 
 const DATA = [
-  ...getRandomData(20),
-  { title: "Hey Joe!" },
-  ...getRandomData(20),
+  ...getRandomData(50),
+  {
+    title: "Hey Joe!",
+    id: "test-id",
+  },
+  ...getRandomData(50),
 ];
 
 const styles = StyleSheet.create({
@@ -45,15 +51,13 @@ const styles = StyleSheet.create({
   },
 });
 
-const SCROLL_TO_INDEX = 20;
-
-const Item = ({ title, index, onLayout }) => {
+const Item = ({ title, id, index, onLayout }) => {
   return (
     <View
       onLayout={onLayout}
       style={[
         styles.item,
-        ...[SCROLL_TO_INDEX === index ? { backgroundColor: "yellow" } : {}],
+        ...[id === "test-id" ? { backgroundColor: "yellow" } : {}],
       ]}
     >
       <Text style={styles.title}>
@@ -64,11 +68,18 @@ const Item = ({ title, index, onLayout }) => {
 };
 
 const FlatListTestScreen = () => {
-  const [data, _setData] = useState(DATA);
+  const [data, setData] = useState(DATA);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setData([...data, ...getRandomData(500)]);
+      console.log("extended");
+    }, 2000);
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
-      <List data={data} />
+      <List data={data} scrollToElement={{ id: "test-id" }} />
     </SafeAreaView>
   );
 };
@@ -82,20 +93,8 @@ class List extends React.PureComponent {
 
   getOffsetByIndex(index) {
     let offset = 0;
-    for (let i = 0; i < index; i += 1) {
-      const elementLayout = this._layouts[i];
-      if (elementLayout && elementLayout.height) {
-        offset += this._layouts[i].height;
-      }
-    }
-    return offset;
-  }
-
-  getOffsetByIndexInverted(index) {
-    let offset = 0;
     console.log(this._layouts.length);
-    for (let i = this._layouts.length; i == index; i = i - 1) {
-      console.log(i);
+    for (let i = 0; i < index; i += 1) {
       const elementLayout = this._layouts[i];
       if (elementLayout && elementLayout.height) {
         offset += this._layouts[i].height;
@@ -109,14 +108,21 @@ class List extends React.PureComponent {
     this._flatList.current.scrollToOffset({ offset, animated: true });
   }
 
+  scrollToItem(item) {
+    const { data } = this.props;
+    const index = data.findIndex((i) => i.id === item.id);
+    this.scrollToIndex(index);
+  }
+
   addToLayoutsMap(layout, index) {
     this._layouts[index] = layout;
   }
 
   componentDidMount() {
     setTimeout(() => {
-      this.scrollToIndex(SCROLL_TO_INDEX);
-    }, 1);
+      // this.scrollToIndex(SCROLL_TO_INDEX);
+      this.scrollToItem(this.props.scrollToElement);
+    }, 100);
   }
 
   render() {
@@ -126,7 +132,7 @@ class List extends React.PureComponent {
       <FlatList
         data={data}
         keyExtractor={(item, index) => item + index}
-        initialNumToRender={30}
+        initialNumToRender={100}
         inverted={true}
         renderItem={({ item, index }) => {
           return (
@@ -135,7 +141,7 @@ class List extends React.PureComponent {
                 this.addToLayoutsMap(layout, index);
               }}
             >
-              <Item title={item.title} index={index} />
+              <Item title={item.title} index={index} id={item.id} />
             </View>
           );
         }}
