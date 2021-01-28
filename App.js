@@ -10,6 +10,8 @@ import KeyboardAvoidingScreen from "./screens/keyboardAvoidingScreen";
 import RadioButtonScreen from "./screens/radioButtonScreen";
 import AutocompletePlacesScreen from "./screens/placesScreen";
 import LayoutTestScreen from "./screens/layoutTestScreen";
+import FixedFlatListTestScreen from "./screens/fixedFlatListTestScreen";
+import FlatListTestScreen from "./screens/flatListTestScreen";
 
 const MyDrawerNavigator = createDrawerNavigator(
   {
@@ -40,8 +42,14 @@ const MyDrawerNavigator = createDrawerNavigator(
     LayoutTestScreen: {
       screen: LayoutTestScreen,
     },
+    FixedFlatListTestScreen: {
+      screen: FixedFlatListTestScreen,
+    },
+    FlatListTestScreen: {
+      screen: FlatListTestScreen,
+    },
   },
-  { initialRouteName: "LayoutTestScreen" },
+  { initialRouteName: "FlatListTestScreen" },
 );
 
 const App = createAppContainer(MyDrawerNavigator);

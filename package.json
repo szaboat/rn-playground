@@ -11,6 +11,7 @@
     "@react-native-community/slider": "3.0.3",
     "debounce": "^1.2.0",
     "expo": "^40.0.0",
+    "faker": "^5.2.0",
     "prettier": "^1.18.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
