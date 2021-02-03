@@ -5,7 +5,6 @@ import faker from "faker";
 import UUID from "uuid-js";
 
 // https://stackoverflow.com/a/57059772/475565
-const TEST_ID = "test-id";
 
 function* range(start, end) {
   for (let i = start; i <= end; i++) {
@@ -23,12 +22,12 @@ const getRandomData = (num) => {
 };
 
 const DATA = [
-  ...getRandomData(50),
+  ...getRandomData(30),
   {
-    title: "Hey Joe!",
+    title: "Hey Joe! (target)",
     id: "test-id",
   },
-  ...getRandomData(50),
+  ...getRandomData(22),
 ];
 
 const styles = StyleSheet.create({
@@ -93,7 +92,6 @@ class List extends React.PureComponent {
 
   getOffsetByIndex(index) {
     let offset = 0;
-    console.log(this._layouts.length);
     for (let i = 0; i < index; i += 1) {
       const elementLayout = this._layouts[i];
       if (elementLayout && elementLayout.height) {

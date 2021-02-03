@@ -12,6 +12,7 @@ import AutocompletePlacesScreen from "./screens/placesScreen";
 import LayoutTestScreen from "./screens/layoutTestScreen";
 import FixedFlatListTestScreen from "./screens/fixedFlatListTestScreen";
 import FlatListTestScreen from "./screens/flatListTestScreen";
+import SectionListTestScreen from "./screens/sectionListScreen";
 
 const MyDrawerNavigator = createDrawerNavigator(
   {
@@ -45,11 +46,14 @@ const MyDrawerNavigator = createDrawerNavigator(
     FixedFlatListTestScreen: {
       screen: FixedFlatListTestScreen,
     },
+    SectionListTestScreen: {
+      screen: SectionListTestScreen,
+    },
     FlatListTestScreen: {
       screen: FlatListTestScreen,
     },
   },
-  { initialRouteName: "FlatListTestScreen" },
+  { initialRouteName: "SectionListTestScreen" },
 );
 
 const App = createAppContainer(MyDrawerNavigator);

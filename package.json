@@ -8,9 +8,12 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-native-community/masked-view": "0.1.10",
     "@react-native-community/slider": "3.0.3",
+    "@react-navigation/native": "^5.9.2",
     "debounce": "^1.2.0",
     "expo": "^40.0.0",
+    "expo-cli": "^4.1.6",
     "faker": "^5.2.0",
     "prettier": "^1.18.2",
     "react": "16.13.1",
@@ -25,6 +28,8 @@
     "react-native-parsed-text": "0.0.21",
     "react-native-radio-input": "^0.9.4",
     "react-native-reanimated": "~1.13.0",
+    "react-native-safe-area-context": "3.1.9",
+    "react-native-screens": "~2.15.2",
     "react-native-simple-radio-button": "^2.7.4",
     "react-native-sms-verifycode": "^2.4.0",
     "react-native-svg": "12.1.0",
@@ -32,6 +37,7 @@
     "react-navigation": "^4.0.10",
     "react-navigation-drawer": "^2.3.2",
     "react-text-mask": "^5.4.3",
+    "sectionlist-get-itemlayout": "^1.0.8",
     "uuid-js": "^0.7.5"
   },
   "devDependencies": {
