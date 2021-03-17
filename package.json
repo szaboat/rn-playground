@@ -8,6 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.12.1",
     "@react-native-community/masked-view": "0.1.10",
     "@react-native-community/slider": "3.0.3",
     "@react-navigation/native": "^5.9.2",
@@ -26,6 +27,7 @@
     "react-native-masked-text": "^1.13.0",
     "react-native-mentions": "^1.1.4",
     "react-native-parsed-text": "0.0.21",
+    "react-native-queue": "https://github.com/inkitt/react-native-queue-asyncstorage",
     "react-native-radio-input": "^0.9.4",
     "react-native-reanimated": "~1.13.0",
     "react-native-safe-area-context": "3.1.9",
