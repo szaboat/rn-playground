@@ -14,6 +14,7 @@ import FixedFlatListTestScreen from "./screens/fixedFlatListTestScreen";
 import FlatListTestScreen from "./screens/flatListTestScreen";
 import SectionListTestScreen from "./screens/sectionListScreen";
 import QueueScreen from "./screens/queueScreen";
+import PhotoAnnotateScreen from "./screens/photoAnnotateScreen";
 
 const MyDrawerNavigator = createDrawerNavigator(
   {
@@ -56,8 +57,11 @@ const MyDrawerNavigator = createDrawerNavigator(
     QueueTestScreen: {
       screen: QueueScreen,
     },
+    PhotoAnnotateScreen: {
+      screen: PhotoAnnotateScreen,
+    },
   },
-  { initialRouteName: "QueueTestScreen" },
+  { initialRouteName: "PhotoAnnotateScreen" },
 );
 
 const App = createAppContainer(MyDrawerNavigator);
