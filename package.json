@@ -37,6 +37,7 @@
     "react-native-simple-radio-button": "^2.7.4",
     "react-native-sms-verifycode": "^2.4.0",
     "react-native-svg": "12.1.0",
+    "react-native-view-shot": "3.1.2",
     "react-native-web": "~0.13.12",
     "react-navigation": "^4.0.10",
     "react-navigation-drawer": "^2.3.2",

@@ -6,11 +6,13 @@ import {
   StyleSheet,
   SafeAreaView,
   ImageBackground as ImageCanvas,
-  TouchableWithoutFeedback,
   useWindowDimensions,
   Text,
+  PixelRatio,
   PanResponder,
 } from "react-native";
+import { captureRef } from "react-native-view-shot";
+
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const styles = StyleSheet.create({
@@ -20,6 +22,7 @@ const styles = StyleSheet.create({
 });
 
 const PhotoAnnotateScreen = () => {
+  const ref = useRef();
   /* Circle marker */
   const [position, setPosition] = useState([100, 100]);
   const [mode, setMode] = useState(null);
@@ -53,6 +56,7 @@ const PhotoAnnotateScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ImageCanvas
+        ref={ref}
         style={{ flex: 1 }}
         source={{
           uri:
@@ -66,14 +70,7 @@ const PhotoAnnotateScreen = () => {
                 setMode("circle");
               }}
             >
-              <Text>Circle</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => {
-                setMode("freehand");
-              }}
-            >
-              <Text>Pencil</Text>
+              <Text>Annotate</Text>
             </TouchableOpacity>
           </View>
           <Svg viewBox={`0 0 ${width} ${height}`}>
@@ -90,6 +87,40 @@ const PhotoAnnotateScreen = () => {
           </Svg>
         </View>
       </ImageCanvas>
+      {mode === "circle" ? (
+        <View
+          style={{
+            position: "absolute",
+            bottom: 0,
+            height: 30,
+            width: "100%",
+            backgroundColor: "yellow",
+            flexDirection: "row",
+          }}
+        >
+          <TouchableOpacity
+            style={{ backgroundColor: "green" }}
+            onPress={async () => {
+              const result = await captureRef(ref, {
+                result: "tmpfile",
+                height: height,
+                width: width,
+                quality: 1,
+                format: "png",
+              });
+              console.log(result);
+            }}
+          >
+            <Text>OK</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{ backgroundColor: "red" }}
+            onPress={() => setMode(null)}
+          >
+            <Text>Cancel</Text>
+          </TouchableOpacity>
+        </View>
+      ) : null}
     </SafeAreaView>
   );
 };
