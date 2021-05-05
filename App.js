@@ -70,7 +70,7 @@ const MyDrawerNavigator = createDrawerNavigator(
     },
   },
 
-  { initialRouteName: "CircularProgressScreen" },
+  { initialRouteName: "PhotoAnnotateScreen" },
 );
 
 const App = createAppContainer(MyDrawerNavigator);
