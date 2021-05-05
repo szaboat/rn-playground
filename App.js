@@ -15,6 +15,8 @@ import FlatListTestScreen from "./screens/flatListTestScreen";
 import SectionListTestScreen from "./screens/sectionListScreen";
 import QueueScreen from "./screens/queueScreen";
 import PhotoAnnotateScreen from "./screens/photoAnnotateScreen";
+import PanScreen from "./screens/panScreen";
+import CircularSlider from "./screens/circularSlider";
 
 const MyDrawerNavigator = createDrawerNavigator(
   {
@@ -60,8 +62,15 @@ const MyDrawerNavigator = createDrawerNavigator(
     PhotoAnnotateScreen: {
       screen: PhotoAnnotateScreen,
     },
+    PanScreen: {
+      screen: PanScreen,
+    },
+    CircularProgressScreen: {
+      screen: CircularSlider,
+    },
   },
-  { initialRouteName: "PhotoAnnotateScreen" },
+
+  { initialRouteName: "CircularProgressScreen" },
 );
 
 const App = createAppContainer(MyDrawerNavigator);
