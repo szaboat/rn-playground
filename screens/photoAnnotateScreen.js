@@ -65,13 +65,15 @@ const PhotoAnnotateScreen = () => {
       >
         <View>
           <View style={{ position: "absolute", top: 10, right: 10 }}>
-            <TouchableOpacity
-              onPress={() => {
-                setMode("circle");
-              }}
-            >
-              <Text>Annotate</Text>
-            </TouchableOpacity>
+            {mode == null ? (
+              <TouchableOpacity
+                onPress={() => {
+                  setMode("circle");
+                }}
+              >
+                <Text>Annotate</Text>
+              </TouchableOpacity>
+            ) : null}
           </View>
           <Svg viewBox={`0 0 ${width} ${height}`}>
             {mode === "circle" ? (
