@@ -64,10 +64,12 @@ const PhotoAnnotateScreen = () => {
         }}
       >
         <View>
-          <View style={{ position: "absolute", top: 10, right: 10 }}>
+          <View style={{ position: "absolute", top: 50, right: 10 }}>
             {mode == null ? (
               <TouchableOpacity
+                style={{ backgroundColor: "green", padding: 10 }}
                 onPress={() => {
+                  console.log("foobar");
                   setMode("circle");
                 }}
               >

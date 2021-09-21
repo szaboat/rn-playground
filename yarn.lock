@@ -12166,6 +12166,11 @@ react-native-google-places-autocomplete@^1.4.0:
     prop-types "^15.5.10"
     qs "^5.2.0"
 
+react-native-image-pan-zoom@^2.1.12:
+  version "2.1.12"
+  resolved "https://registry.yarnpkg.com/react-native-image-pan-zoom/-/react-native-image-pan-zoom-2.1.12.tgz#eb98bf56fb5610379bdbfdb63219cc1baca98fd2"
+  integrity sha512-BF66XeP6dzuANsPmmFsJshM2Jyh/Mo1t8FsGc1L9Q9/sVP8MJULDabB1hms+eAoqgtyhMr5BuXV3E1hJ5U5H6Q==
+
 react-native-masked-input-text@^1.0.11:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/react-native-masked-input-text/-/react-native-masked-input-text-1.0.11.tgz#287585b4f60d51fbb7a7a2f2074ae07a9042616b"

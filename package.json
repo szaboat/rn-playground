@@ -25,6 +25,7 @@
     "react-native-autocomplete-input": "^4.1.0",
     "react-native-gesture-handler": "~1.8.0",
     "react-native-google-places-autocomplete": "^1.4.0",
+    "react-native-image-pan-zoom": "^2.1.12",
     "react-native-masked-input-text": "^1.0.11",
     "react-native-masked-text": "^1.13.0",
     "react-native-mentions": "^1.1.4",

@@ -17,6 +17,8 @@ import QueueScreen from "./screens/queueScreen";
 import PhotoAnnotateScreen from "./screens/photoAnnotateScreen";
 import PanScreen from "./screens/panScreen";
 import CircularSlider from "./screens/circularSlider";
+import ImageSwiper from "./screens/imageSwiperScreen";
+import InputFocusScreen from "./screens/inputFocusScreen";
 
 const MyDrawerNavigator = createDrawerNavigator(
   {
@@ -68,9 +70,15 @@ const MyDrawerNavigator = createDrawerNavigator(
     CircularProgressScreen: {
       screen: CircularSlider,
     },
+    ImageSwiperScreen: {
+      screen: ImageSwiper,
+    },
+    InputFocusScreen: {
+      screen: InputFocusScreen,
+    },
   },
 
-  { initialRouteName: "PhotoAnnotateScreen" },
+  { initialRouteName: "InputFocusScreen" },
 );
 
 const App = createAppContainer(MyDrawerNavigator);
